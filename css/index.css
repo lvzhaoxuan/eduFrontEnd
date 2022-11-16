@@ -1,0 +1,239 @@
+#mainbox {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:1806px;
+    display:flex;
+  }
+#header{
+
+width: 100%;
+height: 100px;
+/* background-color:red; */
+display: inline-block;
+
+}
+#headerbg{
+    position: absolute;
+    width:100%;
+    height: 200px;
+}
+#logobg{
+position:absolute;
+
+}
+#mainbox {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:1806px;
+    display:flex;
+  }
+  #base {
+    position:absolute;
+    z-index:0;
+  }
+  #mainbox_div {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:1806px;
+    background:inherit;
+    background-color:rgba(255, 255, 255, 1);
+    box-sizing:border-box;
+    border-width:1px;
+    border-style:solid;
+    border-color:rgba(121, 121, 121, 1);
+    border-left:0px;
+    border-top:0px;
+    border-right:0px;
+    border-bottom:0px;
+    border-radius:0px;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+  }
+  #mainbox {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:1806px;
+    display:flex;
+  }
+  #mainbox .text {
+    position:absolute;
+    align-self:center;
+    padding:2px 2px 2px 2px;
+    box-sizing:border-box;
+    width:100%;
+  }
+  #mainbox_text {
+    border-width:0px;
+    word-wrap:break-word;
+    text-transform:none;
+    visibility:hidden;
+  }
+  #content_div {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:727px;
+    background:inherit;
+    background-color:rgba(255, 255, 255, 1);
+    box-sizing:border-box;
+    border-width:1px;
+    border-style:solid;
+    border-color:rgba(121, 121, 121, 1);
+    border-radius:0px;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+  }
+  #content {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:807px;
+    width:1920px;
+    height:727px;
+    display:flex;
+  }
+  #content .text {
+    position:absolute;
+    align-self:center;
+    padding:2px 2px 2px 2px;
+    box-sizing:border-box;
+    width:100%;
+  }
+  #content_text {
+    border-width:0px;
+    word-wrap:break-word;
+    text-transform:none;
+    
+  }
+  #bannerbox {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:0px;
+    height:0px;
+  }
+  #banner_img {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:200px;
+  }
+  #banner {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1920px;
+    height:200px;
+    display:flex;
+    opacity:0.48;
+  }
+  #banner .text {
+    position:absolute;
+    align-self:center;
+    padding:2px 2px 2px 2px;
+    box-sizing:border-box;
+    width:100%;
+  }
+  #banner_text {
+    border-width:0px;
+    word-wrap:break-word;
+    text-transform:none;
+    visibility:hidden;
+  }
+  #logo_img {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100px;
+    height:92px;
+  }
+  #logo {
+    border-width:0px;
+    position:absolute;
+    left:120px;
+    top:54px;
+    width:100px;
+    height:92px;
+    display:flex;
+  }
+  #logo .text {
+    position:absolute;
+    align-self:center;
+    padding:2px 2px 2px 2px;
+    box-sizing:border-box;
+    width:100%;
+  }
+  #logo_text {
+    border-width:0px;
+    word-wrap:break-word;
+    text-transform:none;
+    visibility:hidden;
+  }
+  #maintitle_div {
+    border-width:0px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:314px;
+    height:92px;
+    background:inherit;
+    background-color:rgba(255, 255, 255, 0);
+    border:none;
+    border-radius:0px;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    font-family:'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+    font-weight:700;
+    font-style:normal;
+    font-size:55px;
+  }
+  #maintitle {
+    border-width:0px;
+    position:absolute;
+    left:318px;
+    top:54px;
+    width:314px;
+    height:92px;
+    display:flex;
+    font-family:'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+    font-weight:700;
+    font-style:normal;
+    font-size:55px;
+  }
+  #maintitle .text {
+    position:absolute;
+    align-self:center;
+    padding:0px 0px 0px 0px;
+    box-sizing:border-box;
+    width:100%;
+  }
+  #maintitle_text {
+    border-width:0px;
+    word-wrap:break-word;
+    text-transform:none;
+  }
+  .navbar navbar-default{
+    position: absolute;
+  }

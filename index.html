@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" type="image/x-icon"
+            href="res/webicon.ico" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>电子学历系统</title>
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+        <script src="./js/index.js"></script>
+        <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css" >
+        
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body>
+        <div id="base"><!--总的div-->
+            <!-- mainbox (矩形) -->
+            <div id="mainbox" data-label="mainbox">
+            </div>
+            <!--内容-->
+            <div id="content" data-label="content">
+                <div id="content_div" class=""></div>
+                <div id="content_text" class="text">
+                    这里是一些内容
+                </div>
+            </div>
+            <!--组合logo和banner-->
+            <div id="bannerbox" data-label="bannerbox">
+                <!-- banner (矩形) -->
+                <div id="banner" data-label="banner">
+                  <img id="banner_img" class="img " src="res/bannerbg.png"/>
+                  </div>
+                </div>
+        
+                <!-- logo (图片) -->
+                <div id="logo" data-label="logo">
+                  <img id="logo_img" class="img " src="res/logo.png"/>
+                  
+                    <p></p>
+                  </div>
+                </div>
+        
+                <!-- banner文本框 -->
+                <div id="maintitle" class="maintitle">
+                  <div id="maintitle_div" class=""></div>
+                  <div id="maintitle_text" class="text ">
+                    <p><span>xxx电子学历</span></p>
+                  </div>
+                </div>
+              </div>
+            <div class="navbar navbar-default" role="navgation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">电子学历系统</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="./index.html">首页</a></li>
+                            <li><a href="./">学历管理</a></li>
+                            <li><a href="#">个人中心</a></li>
+                            
+                        </ul>
+                        <button type="button" class="btn btn-primary navbar-btn navbar-right" onclick="javascript:window.location.href='./login.html'">登录</button>
+                        <button type="button" class="btn btn-default navbar-btn navbar-right" onclick="javascript:window.location.href='./register.html'">注册</button>
+                    </div>
+                    
+                </div>
+            </div>
+              
+
+
+
+
+        </div>
+
+
+    </body>
+</html>
