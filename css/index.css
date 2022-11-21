@@ -1,3 +1,8 @@
+@font-face{
+  font-family:SmileySans-Oblique;
+  src: url(../res/font/SmileySans-Oblique.ttf);
+}
+
 #mainbox {
     border-width:0px;
     position:absolute;
@@ -15,6 +20,18 @@ height: 100px;
 display: inline-block;
 
 }
+.top{
+  font-size: 26px;
+}
+.navbar{
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,207cca+0,7db9e8+100 */
+background: rgb(30,87,153); /* Old browsers */
+background: -moz-linear-gradient(left,  rgb(30,87,153) 0%, rgb(32,124,202) 0%, rgb(125,185,232) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgb(30,87,153) 0%,rgb(32,124,202) 0%,rgb(125,185,232) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgb(30,87,153) 0%,rgb(32,124,202) 0%,rgb(125,185,232) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+
+}
 #headerbg{
     position: absolute;
     width:100%;
@@ -29,9 +46,13 @@ position:absolute;
     position:absolute;
     left:0px;
     top:0px;
-    width:1920px;
-    height:1806px;
+    width:1000px;
+    height:600px;
     display:flex;
+    margin-top: -24%;
+    background: url("../res/cool-background.png") center;
+    background-size: 100%,600px;
+    z-index: -1;
   }
   #base {
     position:absolute;
@@ -217,10 +238,11 @@ position:absolute;
     width:314px;
     height:92px;
     display:flex;
-    font-family:'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+    /* font-family:'Arial Negreta', 'Arial Normal', 'Arial', sans-serif; */
     font-weight:700;
     font-style:normal;
     font-size:55px;
+    line-height: 92px;
   }
   #maintitle .text {
     position:absolute;
@@ -236,4 +258,9 @@ position:absolute;
   }
   .navbar navbar-default{
     position: absolute;
+  }
+  div{
+    font-family: SmileySans-Oblique;
+    font-weight: bolder;
+    
   }

@@ -3,6 +3,10 @@
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
+@font-face{
+  font-family:SmileySans-Oblique;
+  src: url(../res/font/SmileySans-Oblique.ttf);
+}
 body {
   padding-top: 50px;
 }
@@ -115,3 +119,4 @@ td>input{
   display: inline-block;
   border-radius: 50%;
 } */
+
