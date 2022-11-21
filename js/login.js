@@ -76,7 +76,8 @@ new Vue({
                     // 注册事件
                     if(response.data.code==200){
                         alert("登录成功！")
-                        
+                        localStorage.setItem('schoolNo', this.sch.schoolNo);
+                        localStorage.setItem("schpw",this.sch.password);
                         window.location.href='main_sch.html'
                     }
                     if(response.data.code==50001){

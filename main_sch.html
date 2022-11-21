@@ -63,9 +63,9 @@
           </thead>
           <tbody>
           <tr>
-            <td>{{person.schoolNo}}</td>
-            <td>{{person.name}}</td>
-            <td>{{person.address}}</td>
+            <td>{{sch.schoolNo}}</td>
+            <td>{{sch.name}}</td>
+            <td>{{sch.address}}</td>
           </tr>
           </tbody>
         </table>
@@ -109,7 +109,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th><button class="btn btn-success">签名</button></th>
+            <th><button class="btn btn-success" @click="schsign">签名</button></th>
           </tr>
         </thead>
         </tbody>
@@ -123,9 +123,11 @@
       new Vue({
         el:'#app',
         data:{
-          // 学生数据结构
-          searchId:"",
-          person:[],
+          
+          searchId:{
+                 schoolNo: ""
+          },
+          // person:[],
           sch:{
                     address:"", //区块链地址
                     password:"",//密码
@@ -136,14 +138,17 @@
         },
         methods:{
             setInfodisplay(){
-                axios.get("http://localhost/viewSch",this.searchId,{timeout:5000}).then(res=>{
-                if(response.data.code==200){
-                    this.person=res.data.data;
+              console.log(this.searchId);
+                axios.post("http://localhost/viewSch",this.searchId).then(res=>{
+                  console.log(res.data)
+                  if(res.data.code==200){
+                    
+                    this.sch=res.data.data;
                 }
                 })
-                .catch(res=>{
-                  // alert("请求超时")
-                })
+                // .catch(res=>{
+                //   // alert("请求超时")
+                // })
     
             },
             changeInfo(){
@@ -158,11 +163,11 @@
                 })
             },
             schsign(){
-                axios.get("http://localhost/getStatus>").then(res=>{
+                axios.post("http://localhost/getStatus>").then(res=>{
                   if(res.data.data[0]==0)
                     alert("不存在您的电子学历")
                 })
-                axios.get("http://localhost/stuSign",this.searchId).then(res=>{
+                axios.post("http://localhost/schSign",this.searchId).then(res=>{
                     if(res.data.code==200){
                         alert("签名成功")
                     }
@@ -176,7 +181,7 @@
                 
         },
         mounted(){
-                this.searchId=localStorage.getItem('schoolNo');
+                this.searchId.schoolNo=localStorage.getItem('schoolNo');
                 if($('.info').css('display')!='none'){
                   this.setInfodisplay()
                 }

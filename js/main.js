@@ -33,5 +33,5 @@ $("#item4").click(function(){
     $(".look").css("display","none");
     $(".sign").css("display","block");
 });
-var x=JSON.stringify(localStorage.getItem('idCard'))
-console.log(x)
+// var x=JSON.stringify(localStorage.getItem('idCard'))
+// console.log(x)
