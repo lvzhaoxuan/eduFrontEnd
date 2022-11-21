@@ -70,7 +70,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>{{person.idCard}}</td>
+                  <td>{{person.name}}</td>
                   <td>{{person.sex}}</td>
                   <td>{{person.address}}</td>
                   <td>{{person.birthDate}}</td>
@@ -246,8 +246,21 @@
     el:'#app',
     data:{
       // 学生数据结构
-      searchId:"",
-      person:[],
+      searchId:{
+            idCard:"3623"
+      },
+      person:{
+                // address:"", //区块链地址
+                // password:"",//密码
+                // name:"",    //学生姓名
+                // sex:"",     //性别
+                // birthDate:"",//出生日期
+                // idCard:"",  //身份证
+                // admDate:"", //入校日期
+                // graduDate:"",//毕业日期
+                // major:"",//专业
+                // eduType:"",//教育类型
+      },
       stu:{
                 address:"", //区块链地址
                 password:"",//密码
@@ -280,9 +293,12 @@
     },
     methods:{
         setInfodisplay(){
-            axios.get("http://localhost/viewStu",this.searchId,{timeout:5000}).then(res=>{
-            if(response.data.code==200){
+          console.log(this.searchId)
+            axios.post("http://localhost/viewStu",this.searchId,{timeout:1000000}).then(res=>{
+              console.log(res.data)
+            if(res.data.code==200){
                 this.person=res.data.data;
+                console.log(person)
             }
             })
             .catch(res=>{
@@ -302,7 +318,7 @@
             })
         },
         getEvidence(){
-            axios.get("http://localhost/viewEvidence",this.searchId).then(res=>{
+            axios.post("http://localhost/viewEvidence",this.searchId).then(res=>{
               if(res.data.code==200){
                 this.raw=res.data.data
               }
@@ -313,11 +329,11 @@
 
         },
         stusign(){
-            axios.get("http://localhost/getStatus>").then(res=>{
+            axios.post("http://localhost/getStatus>").then(res=>{
               if(res.data.data[0]==0)
                 alert("不存在您的电子学历")
             })
-            axios.get("http://localhost/stuSign",this.searchId).then(res=>{
+            axios.post("http://localhost/stuSign",this.searchId).then(res=>{
                 if(res.data.code==200){
                     alert("签名成功")
                 }
@@ -337,7 +353,7 @@
         }    
     },
     mounted(){
-            this.searchId=localStorage.getItem('idCard');
+            this.searchId.idCard=localStorage.getItem('idCard');
             if($('.info').css('display')!='none'){
               this.setInfodisplay()
             }

@@ -167,7 +167,7 @@
               })
           },
           getEviStatus(){
-              axios.get("http://localhost/getStatus").then(res=>{
+              axios.post("http://localhost/getStatus").then(res=>{
                     if(res.data.code==200)
                         evistatus=res.data.data[0]
               })
