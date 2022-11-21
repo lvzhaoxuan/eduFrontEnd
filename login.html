@@ -1,13 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="stylesheet" rel=""
-    <title>登录</title>
+        <link rel="shortcut icon" type="image/x-icon" href="res/webicon.ico" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>登录</title>
+        
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+        <script src="./js/axios.js"></script>
+        <script src="./js/vue.js"></script>
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css"/>
+        
 </head>
 <body>
+      <!-- particles.js container -->
+<div id="particles-js">
+    <div id="top"><img alt="Brand" src="./res/logo.png">电子学历系统</div>
+        <div class="content">  
+            <div class="mybox" id="app">
+                <!-- 学生登录模块 -->
+                <div class="form-group" id="stu">
+                    <h1>学生登录</h1>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon3">身份证号</span>
+                        <input v-model="stu.idCard" id="stuid" type="text" class="form-control" placeholder="请输入您的身份证号">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon3">登录密码</span>
+                        <input v-model="stu.password" id="stupw" type="text" class="form-control" placeholder="请输入您的密码">
+                    </div>
+                </div>
+                <!-- 学校登录模块 -->
+                <div class="form-group" id="sch">
+                    <h1>学校登录</h1>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon3">学校编号</span>
+                        <input v-model="sch.schoolNo" id="schno" type="text" class="form-control" placeholder="请输入学校编号">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon3">登录密码</span>
+                        <input v-model="sch.password" id="schpw" type="text" class="form-control" placeholder="请输入密码">
+                    </div>
+                </div>
+                <!-- 管理员登录模块 -->
+                <div class="form-group" id="admin">
+                    <h1>管理员登录</h1>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon3">管理员号</span>
+                        <input v-model="admin.name" id="adminname" type="text" class="form-control" placeholder="请输入管理员账号">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="sizing-addon3">登录密码</span>
+                        <input v-model="admin.password" id="adminpw" type="text" class="form-control" placeholder="请输入登录密码">
+                    </div>
+                </div>
+                <button class="btn btn-primary text-center" @click="loginbtn">登录</button><br><br><a href="./register.html" class="btn-block">没有账号？点击注册</a>
+                <br><br><br><br><br>
+                <!-- 底部切换模块 -->
+                <div class="btn-pack">
+                    <button id="stu-btn" class="btn btn-primary" onclick="javascript:document.getElementById('stu').style.display='block';document.getElementById('sch').style.display='none';document.getElementById('admin').style.display='none'">学生登录请点我</button>  
+                    <button id="admin-btn" class="btn btn-danger" onclick="javascript:document.getElementById('stu').style.display='none';document.getElementById('sch').style.display='none';document.getElementById('admin').style.display='block'">管理员登录请点我</button>
+                    <button id="sch-btn" class="btn btn-primary" onclick="javascript:document.getElementById('stu').style.display='none';document.getElementById('sch').style.display='block';document.getElementById('admin').style.display='none'">学校登录请点我</button>
+                </div>
+            </div>
+        </div>
+            
+</div>  
+      <!-- scripts -->
+      <script src="./js/particles.js"></script>
+      <script src="./js/app.js"></script>
+      <script src="./js/login.js"></script>
+      
+    
+    
+    
+
+
+</div>
     
 </body>
 </html>

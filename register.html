@@ -6,68 +6,116 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <title>注册</title>
-        
         <script src="js/jquery-3.6.1.min.js"></script>
         <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
-        <script src="./js/index.js"
         <script src="./js/vue.js"></script>
+        <script src="./js/axios.js"></script>
         
+        <link rel="stylesheet" href="css/register.css">
         <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css"/>
+    </head>
 <body>
 <div id="mainbox">
-    <div class="container-fluid">
-            <div class="form-group">
+    <!-- <img src="./res/bg.jpg" alt="bg"/> -->
+    <div id="top"><a href="./index.html"><img alt="Brand" src="./res/logo.png"></a>电子学历系统</div>
+    <div class="container-fluid" id="app">
+        <br>
+            <!-- 学生注册 -->
+            <div class="form-group" id="stu">
+                <!-- 学生地址 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">学生地址</span>
-                    <input id="addr" type="text" class="form-control" placeholder="请输入正确的学生地址">
+                    <input v-model="stu.address" id="addr" type="text" class="form-control" placeholder="请输入正确的学生地址">
                 </div>
-                <br>
+                <!-- <br> -->
+                <!-- 学生姓名 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">学生姓名</span>
-                    <input id="name" type="text" class="form-control" placeholder="请输入真实姓名">
+                    <input v-model="stu.name" id="name" type="text" class="form-control" placeholder="请输入真实姓名">
                 </div>
+                <!-- 学生性别 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">学生性别</span>
-                    <select class="form-control"id="sex">
+                    <select v-model="stu.sex" class="form-control"id="sex">
                         <option>男</option>
                         <option>女</option>
                         <option selected> </option>
                     </select>
                 </div>
+                <!-- 出生日期 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">出生日期</span>
-                    <input id="birthdate" type="date" class="form-control" placeholder="请输入真实的出生日期">
+                    <input v-model="stu.birthDate" id="birthdate" type="date" class="form-control" placeholder="请输入真实的出生日期">
                 </div>
+                <!-- 身份证号 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">身份证号</span>
-                    <input id="name" type="text" class="form-control" placeholder="请输入真实的身份证信息">
+                    <input v-model="stu.idCard" id="name" type="text" class="form-control" placeholder="请输入真实的身份证信息">
                 </div>
+                <!-- 入校日期 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">入校日期</span>
-                    <input id="name" type="text" class="form-control" placeholder="请输入真实的入校日期">
+                    <input v-model="stu.admDate" id="name" type="text" class="form-control" placeholder="请输入真实的入校日期">
                 </div>
+                <!-- 毕业日期 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">毕业日期</span>
-                    <input id="name" type="text" class="form-control" placeholder="请输入真实的毕业日期">
+                    <input v-model="stu.graduDate" id="name" type="text" class="form-control" placeholder="请输入真实的毕业日期">
                 </div>
+                <!-- 专业 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">所学专业</span>
-                    <input id="name" type="text" class="form-control" placeholder="请输入真实的专业信息">
+                    <input v-model="stu.major" id="name" type="text" class="form-control" placeholder="请输入真实的专业信息">
                 </div>
+                <!-- 教育类型 -->
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon3">教育类型</span>
-                    <select class="form-control"id="">
+                    <select v-model="stu.eduType " class="form-control">
                         <option>全日制</option>
                         <option>非全日制</option>
                         <option selected> </option>
                     </select>
                 </div>
-               
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon3">您的密码</span>
+                    <input v-model="stu.password" id="password" type="text" class="form-control" placeholder="请输入您的密码">
+                </div>
+                
             </div>
+            <!-- 学校注册 -->
+            <div class="form-group" id="sch">
+                <!-- 学校地址 -->
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon3">学校地址</span>
+                    <input v-model="sch.address" id="schaddr" type="text" class="form-control" placeholder="请输入正确的学校区块链地址">
+                </div>
+                <!-- 校长地址 -->
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon3">校长姓名</span>
+                    <input v-model="sch.name" id="schname" type="text" class="form-control" placeholder="请输入校长的姓名">
+                </div>
+                <!-- 学校编号 -->
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon3">学校编号</span>
+                    <input v-model="sch.schoolNo" id="schid" type="text" class="form-control" placeholder="请输入学校的编号">
+                </div>
+                <!-- 学校密码 -->
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon3">学校密码</span>
+                    <input v-model="sch.password" id="schpw" type="text" class="form-control" placeholder="请输入学校的编号">
+                </div>
+            </div>
+            <button id="btn" class="btn btn-default center-block" @click="registerbtn">注册</button>
+            <br><br>
+    </div>
+    <!-- 侧边切换用户 -->
+    <div class="btn-pack">
+        <button id="stu-btn" class="btn btn-primary" onclick="javascript:document.getElementById('sch').style.display='none';document.getElementById('stu').style.display='block'">学生注册请点我</button>  
+        <button id="sch-btn" class="btn btn-primary" onclick="javascript:document.getElementById('stu').style.display='none';document.getElementById('sch').style.display='block'">学校注册请点我</button>
     </div>
 </div>
-    
+<!-- 必须放在后面，因为所包含的vue实例必须先渲染 -->
+<script src="./js/register.js"></script>    
 </body>
 </html>

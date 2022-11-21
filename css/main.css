@@ -1,15 +1,7 @@
+
 @font-face{
     font-family:SmileySans-Oblique;
     src: url(../res/font/SmileySans-Oblique.ttf);
-}
-body{
-  margin: 0;
-}
-#particles-js{
-  width: 100%;
-  height: 100%;
-  background-color: #d4d5d1a1;
-  height: 100hv; 
 }
 #top{
     /* display: flex; */
@@ -34,31 +26,3 @@ body{
     
   
 }
-.content {
-  /* display: inline-block; */
-  position: absolute;
-  top:100px;
-  width: 100%;
-  /* display: flex; */
-  text-align: center;
-  display:flex;
-  /* display: flex; */
-  /* position:; */
-  
-   
-}
-.mybox {
-position: relative;
-width: 30%;
-margin-top: 50px;
-left: 35%;
-/* left: 30%; */
-/* align-self: cente; */
-/* position; */
-/* align-self:center; */
-
-}
-#admin,#sch{
-  display: none;
-}
-
