@@ -206,14 +206,15 @@
                 <th>毕业日期</th>
                 <th>学生身份证</th>
                 <th>学生专业</th>
+                <th>教育类型</th>
                 <th>三方签名</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr >
                 <td>{{evidence.evidenceCode}}</td>
                 <td>{{evidence.priName}}</td>
-                <td>{{evidence.schoolAdress}}</td>
+                <td>{{evidence.schAddress}}</td>
                 <td>{{evidence.schoolNo}}</td>
                 <td>{{evidence.sex}}</td>
                 <td>{{evidence.stuAddress}}</td>
@@ -222,6 +223,8 @@
                 <td>{{evidence.stuGraduDate}}</td>
                 <td>{{evidence.stuIdCard}}</td>
                 <td>{{evidence.stuName}}</td>
+                <td>{{evidence.stuMajor}}</td>
+                <!-- <td>{{evidence.eduType}}</td> -->
                 <td>{{sign}}</td>
               </tr>
             </tbody>
@@ -289,7 +292,7 @@
         evidence: {
           evidenceCode: "",
           priName: "",
-          schoolAdress: "",
+          schAddress: "",
           schoolNo: "",
           sex: "",
           stuAddress: "",
@@ -298,6 +301,8 @@
           stuGraduDate: "",
           stuIdCard: "",
           stuName: "",
+          stuMajor:"",
+          // eduType:"",
         },
         sign: []
       },
@@ -355,12 +360,22 @@
 
           })
         },
-        // data.data=[[{},[]],[{},[]]]
+        // data.data=[[{大的：ddad},[]],[{},[]]]
         viewEvidence() {
+          // 循环输出
           console.log(this.raw.length);
           for (i = 0; i < this.raw.length; i++) {
             this.evidence = this.raw[i][0];
+            alert("电子学历存证码:"+this.evidence.evidenceCode+"\n"+
+                  "校长姓名:"+this.evidence.priName+"\n"+
+                  "学校区块链地址:"+this.evidence.schAddress+"\n"+
+                  "学校编号:"+this.evidence.schoolNo+"\n性别:"+
+                  this.evidence.sex+"\n学生区块链地址:"+this.evidence.stuAddress+"\n入学日期:"+this.evidence.stuAddress+"\n出生日期:"+this.evidence.stuBirthDate+"\n毕业日期:"+this.evidence.stuGraduDate+"\n学生身份证:"+this.evidence.stuIdCard+"\n学生专业:"+this.evidence.stuMajor+"\n"+"\n三方签名:"+this.sign[0]+"\n"+this.sign[1]+"\n"+this.sign[2]
+                  )
+            
+            // alert(this.evidence.evidenceCode)
             console.log(this.evidence)
+            console.log(this.sign)
             this.sign = this.raw[i][1]
           }
         },
