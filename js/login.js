@@ -107,7 +107,7 @@ new Vue({
                 alert("密码不能为空！")
                 return
             }
-            axios.post("http://localhost/getStatus",this.admin,{timeout:5000}) //若5秒内未返回任何数据，提示超时
+            axios.post("http://localhost/adminiLogin",this.admin,{timeout:5000}) //若5秒内未返回任何数据，提示超时
                 .then(response=>{
                     // 注册事件
                     if(response.data.code==200){
