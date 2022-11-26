@@ -49,6 +49,9 @@ new Vue({
 
                         
                     }
+                    if(response.data.code==400){
+                        alert("身份证或密码错误")
+                    }
                     if(response.data.code==50001){
                         alert("登录失败！")
                     }
@@ -80,6 +83,9 @@ new Vue({
                         localStorage.setItem("schpw",this.sch.password);
                         window.location.href='main_sch.html'
                     }
+                    if(response.data.code==400){
+                        alert("学校编号或密码错误")
+                    }
                     if(response.data.code==50001){
                         alert("登录失败！")
                     }
@@ -107,6 +113,9 @@ new Vue({
                     if(response.data.code==200){
                         alert("登录成功！")
                         window.location.href='main_admin.html'
+                    }
+                    if(response.data.code==400){
+                        alert("管理员id或密码错误")
                     }
                     if(response.data.code==50001){
                         alert("登录失败！")
